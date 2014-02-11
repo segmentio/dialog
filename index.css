@@ -14,18 +14,6 @@
   display: block;
 }
 
-.Dialog-content {
-
-}
-
-.Dialog-title {
-
-}
-
-.Dialog-button {
-
-}
-
 .Dialog-button.hidden {
   display: none;
 }
