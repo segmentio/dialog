@@ -7,7 +7,7 @@
     "component/domify": "*",
     "component/emitter": "*",
     "component/reactive": "0.14.1",
-    "segmentio/modal": "0.3.1"
+    "segmentio/modal": "0.3.2"
   },
   "development": {
     "segmentio/on-enter": "*"
