@@ -17,7 +17,6 @@ function Dialog(options) {
   this.modal = modal(this.el).overlay();
 }
 
-
 /**
  * Mixin
  */
@@ -49,13 +48,20 @@ Dialog.prototype.effect = function(name){
 
 
 /**
- * Fired when hitting the confirm button
+ * Add an action to the dialog
  *
- * @return {void}
+ * @param {String} id
+ * @param {String} text
  */
-Dialog.prototype.handleConfirm = function() {
-  this.emit('confirm');
-  this.hide();
+Dialog.prototype.action = function(id, options) {
+  var self = this;
+  var container = this.el.querySelector('.Dialog-options');
+  var el = domify('<a href="'+options.link+'" class="Dialog-button Button Button--'+options.type+' Button--full">'+options.text+'</a>');
+  el.addEventListener('click', function(e){
+    self.emit(id, e);
+  }, true);
+  container.appendChild(el);
+  return this;
 };
 
 
@@ -66,7 +72,8 @@ Dialog.prototype.handleConfirm = function() {
  *
  * @return {Dialog}
  */
-Dialog.prototype.show = function(){
+Dialog.prototype.show = function(effect){
+  if(effect) this.effect(effect);
   this.modal.show();
   return this;
 };
