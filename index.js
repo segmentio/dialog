@@ -1,9 +1,13 @@
+
+/**
+ * Module dependencies.
+ */
+
 var domify = require('domify');
 var template = require('./index.html');
 var reactive = require('reactive');
 var modal = require('modal');
 var emitter = require('emitter');
-
 
 /**
  * Initialize a new `Dialog`.
@@ -20,8 +24,8 @@ function Dialog(options) {
 /**
  * Mixin
  */
-emitter(Dialog.prototype);
 
+emitter(Dialog.prototype);
 
 /**
  * Make the dialog closable
